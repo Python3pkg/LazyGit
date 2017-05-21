@@ -30,17 +30,17 @@ def main():
         if text == 'new' :
             #Write git_username and git_reponame to info.txt file
             f = open('info.txt' , 'w')
-            git_username = input('Enter your GitHub username : ')
+            git_username = eval(input('Enter your GitHub username : '))
             f.write(git_username)
             f.write(os.linesep)
-            git_reponame = input('Enter GitHub remote repository name : ')
+            git_reponame = eval(input('Enter GitHub remote repository name : '))
             f.write(git_reponame)
             f.close()
 
         else :
     
             checkout_dir = sys.argv[1]
-            commit_msg = input('Write your commit message: ')
+            commit_msg = eval(input('Write your commit message: '))
 
             #Retrieve git_username and git_reponame from info.txt file
             file_name = 'info.txt'
@@ -57,7 +57,7 @@ def main():
             os.chdir('%s' %checkout_dir)
 	
             #Printing current wokring directory
-            print 'Current working directory is : '
+            print('Current working directory is : ')
             os.system('pwd')        
         
             #Check whether git has been initialised in directory
